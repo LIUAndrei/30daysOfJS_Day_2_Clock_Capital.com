@@ -1,0 +1,117 @@
+@import "normalize.scss";
+
+$black: hsla(0, 0, 10.6%, 100%);
+$white: white;
+$brown: hsla(26.7, 48.1%, 73.3%, 100%);
+$brown_h: hsla(26.7, 81%, 10.3%, 100%);
+$brown_m: hsla(26.7, 81%, 30%, 100%);
+$brown_s: hsla(26.7, 81%, 60%, 100%);
+
+body {
+	background-color: $black;
+}
+
+.outer-ring {
+	position: relative;
+	margin: 10vh auto;
+	height: 80vh;
+	width: 80vh;
+	background-color: $white;
+	border-radius: 50%;
+	z-index: 10;
+}
+
+.inner-ring {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: $black;
+	border-radius: 50%;
+	height: (28 / 64) * 100%;
+	width: (28 / 64) * 100%;
+	z-index: 20;
+}
+
+.right-side-dent-a {
+	position: absolute;
+	transform-origin: top left;
+	transform: translate(100%, 99%) skewX(53deg);
+	background-color: $black;
+	border: none;
+	width: 50%;
+	height: 50%;
+	z-index: 30;
+}
+
+.right-side-dent-b {
+	position: absolute;
+	transform-origin: bottom left;
+	transform: translate(100%, 1%) skewX(-53deg);
+	background-color: $black;
+	border: none;
+
+	width: 50%;
+	height: 50%;
+	z-index: 30;
+}
+ 
+.brown-circle {
+	position: absolute;
+	top: 50%;
+	left: 77%;
+	transform: translate(0, -50%);
+	background-color: $brown;
+	width: 20%;
+	height: 20%;
+	border-radius: 50%;
+	z-index: 40;
+}
+
+
+
+.hand {
+	position: absolute;
+	left: 50%;
+	transition: all 0.05s;
+	transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+	height: 100%;
+}
+
+.hour {
+	transform: translate(-50%) rotate(0deg);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, $brown_h 50%, $brown_h 100%);
+	width: 1em;
+	border-radius: 0.5em;		
+	z-index: 50;
+}
+
+.minute {
+	transform: translate(-50%) rotate(0deg);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, $brown_m 50%, $brown_m 100%);
+	width: 0.5em;
+	border-radius: 0.25em;		
+	z-index: 51;
+}
+
+.seconds {
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, $brown_h 50%, $brown_h 100%);
+	transform: translate(-50%) rotate(0deg);
+	width: 0.25em;
+	border-radius: 0.125em;		
+	z-index: 52;
+	}
+
+
+.center-disc {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: $black;
+	box-shadow: 0px 0px 23px 9px rgba(255,255,255,0.28); 
+	width: 20%;
+	height: 20%;
+	border-radius: 50%;
+	z-index: 60;
+}
